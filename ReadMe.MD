@@ -7,7 +7,7 @@
 $ docker pull cassandra
 $ docker run -d -p 9042:9042 --name my-cassandra cassandra
 ```
-- Open Cassandra CQL Shell to create Cassandra table:
+- Open Cassandra CQL Shell:
 
 ```bash
 $ docker run -it --link my-cassandra:cassandra --rm cassandra sh -c 'exec cqlsh "$CASSANDRA_PORT_9042_TCP_ADDR"'
@@ -18,28 +18,28 @@ $ docker run -it --link my-cassandra:cassandra --rm cassandra sh -c 'exec cqlsh 
 ```cql
 cqlsh> create keyspace testapp with replication={'class':'SimpleStrategy', 'replication_factor':1};
 ```
-- Create `customer` table for `testapp` keyspace:
+- Create `customer` table in `testapp` keyspace:
 
 ```cql
 cqlsh> use testapp;
-cqlsh> CREATE TABLE customer(
-         id int PRIMARY KEY,
-         firstname text,
-         lastname text,
-         age int
-      );
+cqlsh:testapp> CREATE TABLE customer(
+		         id int PRIMARY KEY,
+		         firstname text,
+		         lastname text,
+		         age int
+		      );
 ```
 
 - Create an index on `firstname` column:
 
 ```cql
-cqlsh> CREATE INDEX ON testapp.customer (firstname);
+cqlsh:testapp> CREATE INDEX ON testapp.customer (firstname);
 ```
 
 - Query `customer` table:
 
 ```cql
-cqlsh> select * from customer;
+cqlsh:testapp> select * from customer;
 ```
 
 - Run the application:
