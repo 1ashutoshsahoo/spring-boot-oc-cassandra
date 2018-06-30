@@ -16,18 +16,18 @@ $ docker run -it --link my-cassandra:cassandra --rm cassandra sh -c 'exec cqlsh 
 - Create Cassandra keyspace with name `testapp`:
 
 ```cql
-cqlsh> create keyspace testapp with replication={'class':'SimpleStrategy', 'replication_factor':1};
+cqlsh> CREATE KEYSPACE testapp WITH replication={'class':'SimpleStrategy', 'replication_factor':1};
 ```
 - Create `customer` table in `testapp` keyspace:
 
 ```cql
-cqlsh> use testapp;
+cqlsh> USE testapp;
 cqlsh:testapp> CREATE TABLE customer(
-		         id int PRIMARY KEY,
-		         firstname text,
-		         lastname text,
-		         age int
-		      );
+           ... id int PRIMARY KEY,
+           ... firstname text,
+           ... lastname text,
+           ... age int
+           ... );
 ```
 
 - Create an index on `firstname` column:
@@ -36,10 +36,11 @@ cqlsh:testapp> CREATE TABLE customer(
 cqlsh:testapp> CREATE INDEX ON testapp.customer (firstname);
 ```
 
-- Query `customer` table:
+- Verify and  Query `customer` table:
 
 ```cql
-cqlsh:testapp> select * from customer;
+cqlsh:testapp> DESCRIBE TABLE customer;
+cqlsh:testapp> SELECT * FROM customer;
 ```
 
 - Run the application:

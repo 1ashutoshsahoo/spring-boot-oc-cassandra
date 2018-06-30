@@ -8,7 +8,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import in.ashu.oc.model.Customer;
-import in.ashu.oc.model.CustomerRepository;
+import in.ashu.oc.repository.CustomerRepository;
 
 @SpringBootApplication
 public class SpringBootOcApplication implements CommandLineRunner {
