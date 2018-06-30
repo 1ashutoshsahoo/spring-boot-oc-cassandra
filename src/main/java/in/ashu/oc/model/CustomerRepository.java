@@ -9,8 +9,8 @@ public interface CustomerRepository extends CrudRepository<Customer, String> {
 
 	@AllowFiltering
 	public List<Customer> findByFirstname(String firstname);
- 
+
 	@AllowFiltering
 	public List<Customer> findByAgeGreaterThan(int age);
-	
+
 }
