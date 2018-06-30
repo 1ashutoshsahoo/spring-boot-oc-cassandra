@@ -1,0 +1,7 @@
+spring:
+  data:
+    cassandra:
+      keyspace-name: testapp
+      contact-points:
+      - localhost # default is localhost, so it can be skipped
+      port: 9042
