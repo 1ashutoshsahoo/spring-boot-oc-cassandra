@@ -1,7 +1,7 @@
 spring:
   data:
     cassandra:
-      keyspace-name: testapp
+      keyspace-name: customer_ks
       contact-points:
       - localhost
       port: 9042

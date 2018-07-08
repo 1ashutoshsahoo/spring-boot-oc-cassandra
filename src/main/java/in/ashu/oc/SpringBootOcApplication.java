@@ -24,7 +24,8 @@ public class SpringBootOcApplication implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		clearData();
 		saveData();
-		lookup();		
+		lookup();
+		System.exit(0);
 	}
 	
 	public void clearData(){

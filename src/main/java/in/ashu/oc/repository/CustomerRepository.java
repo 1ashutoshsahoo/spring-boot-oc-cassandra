@@ -9,7 +9,7 @@ import in.ashu.oc.model.Customer;
 
 public interface CustomerRepository extends CrudRepository<Customer, String> {
 
-	@AllowFiltering
+	
 	public List<Customer> findByFirstname(String firstname);
 
 	@AllowFiltering
