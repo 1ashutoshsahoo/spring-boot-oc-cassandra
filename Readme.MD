@@ -48,5 +48,6 @@ cqlsh:customer_ks> SELECT * FROM customer;
 $ cd spring-boot-oc-cassandra
 $ mvn spring-boot:run
 ```
-- OpenShift:
+## OpenShift:
+
 TODO
